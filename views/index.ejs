@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL shortener</title>
+</head>
+<body>
+    <h1> URL SHORTENER PRO MAX LITE</h1>
+
+    <form action="/new-short-url" method="POST">
+        <lable for="url">URL: </lable>
+        <input type="text" required id="url" name="url" placeholder="Enter your long URL here"></input>
+
+        <button type="submit">Shrink URL</button>
+    </form>
+
+    <table>
+        <tr>
+            <th> Long URL</th>
+            <th> Short URL</th>
+            <th> clicks</th>
+        </tr>
+    </table>
+</body>
+</html>
