@@ -16,7 +16,12 @@ const ShortUrlSchema= new mongoose.Schema({
         type: Number,
         required: true,
         default: 0
-    }
+    },
+   regions:{
+       type: Array,
+       required: true,
+       default: []
+   }
 })
 
 module.exports=mongoose.model("shorUrl",ShortUrlSchema)

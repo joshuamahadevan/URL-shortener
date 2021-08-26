@@ -5,23 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL shortener</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
 </head>
+<style>
+    *{
+        margin: 1rem;
+    }
+    a{
+        margin: 0;
+    }
+</style>
 <body>
     <h1> URL SHORTENER PRO MAX LITE</h1>
 
     <form action="/new-short-url" method="POST">
         <lable for="url">URL: </lable>
-        <input type="text" required id="url" name="url" placeholder="Enter your long URL here"></input>
+        <input type="text" required id="url" name="url" class="form-control col" placeholder="Enter your long URL here"></input>
 
-        <button type="submit">Shrink URL</button>
+        <button type="submit" class="btn btn-success mt-2">Shrink URL</button>
     </form>
 
-    <table>
+    <table class="table table-striped">
         <tr>
             <th> Long URL</th>
             <th> Short URL</th>
             <th> clicks</th>
         </tr>
+        <% urlData.forEach( url => { %>
+            <tr>
+                <td> <a href= <%= url.longURL%> ><%= url.longURL%> </a>  </td>
+                <td> <a href= <%= url.shortURL%> ><%= url.shortURL%> </a>  </td>
+                <td> <a href= "/user-info/<%= url.shortURL%>"><%= url.count %></a></td>
+            </tr>
+        <% }) %> 
     </table>
+
 </body>
 </html>
